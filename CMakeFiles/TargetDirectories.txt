@@ -1,2 +1,0 @@
-/Users/jacopo/Desktop/TESI/list_library/CMakeFiles/edit_cache.dir
-/Users/jacopo/Desktop/TESI/list_library/CMakeFiles/rebuild_cache.dir

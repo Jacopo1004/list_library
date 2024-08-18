@@ -12,93 +12,92 @@
 #include "list.h"
 
 /**
- *  @brief RESTITUISCE IL VALORE MAGGIORE TRA DUE INTERI.
+ *  @brief Restituisce il valore maggiore tra due interi.
  * 
  *  @param a Primo numero intero da confrontare.
  *  @param b Secondo numero intero da confrontare.
  * 
- *  @return IL VALORE MAGGIORE TRA a E b.
+ *  @return Il valore maggiore tra a e b.
  */
 
 int mymax(int a, int b);
 
 /**
- *  @brief RESTITUISCE IL VALORE MINORE TRA DUE INTERI.
+ *  @brief Restituisce il valore minore tra due interi.
  * 
  *  @param a Primo numero intero.
  *  @param b Secondo numero intero.
  * 
- *  @return IL VALORE MINORE TRA a E b.
+ *  @return Il valore minore tra a e b.
  */
  
 int mymin(int a, int b);
 
 /**
- *  @brief VERIFICA SE UNA LISTA È ORDINATA IN ORDINE CRESCENTE.
+ *  @brief Verifica se una lista è ordinata in ordine crescente.
  * 
  *  @param i Puntatore alla testa della lista da verficare.
  *  
- *  @return TRUE SE LA LISTA È VUOTA O ORDINATA IN ORDINE CRESCENTE, FALSE ALTRIMENTI. 
+ *  @return True se la lista è vuota o ordinata in ordine crescente, false altrimenti.
  */
 
 bool IsOrdered(Item* i);
 
 /**
- *  @brief CONFRONTA DUE LISTE DI ELEMENTI.
+ *  @brief Confronta due liste di elementi.
  * 
  *  @param i1 Puntatore alla testa della prima lista da confrontare.
  *  @param i2 Puntatore alla testa della seconda lista da confrontare.
  *  
- *  @return TRUE SE LE LISTE SONO UGUALI (HANNO GLI STESSI VALORI NELLO STESSO ORDINE), 
- *          FALSE ALTRIMENTI. 
+ *  @return True se le liste sono uguali (hanno gli stessi valori nello stesso ordine), false altrimenti.
  */
 
 bool MainConfrontaListe(Item* i1, Item* i2);
 
 /**
- *  @brief CREA UNA COPIA DI UNA LISTA.
+ *  @brief Crea una copia di una lista.
  * 
  *  @param l Puntatore alla testa della lista da copiare.
  *  
- *  @return UN PUNTATORE ALLA TESTA DELLA NUOVA LISTA.
+ *  @return Un puntatore alla testa della nuova lista.
  */
 
 Item* MainCopyList(const Item* l);
 
 /**
- *  @brief CREA UNA LISTA A PARTIRE DA UN ARRAY DI INTERI.
+ *  @brief Crea una lista a partire da un array di interi.
  * 
  *  @param v Puntatore all'array di interi da copiare.
  *  @param v_size Dimensione dell'array.
  *  
- *  @return UN PUNTATORE ALLA TESTA DELLA LISTA CREATA A PARTIRE DALL'ARRAY.
+ *  @return Un puntatore alla testa della lista creata a partire dall'array.
  */
 
 Item* MainCreateListFromVector(const int *v, size_t v_size);
 
 /**
- *  @brief VERIFICA SE UN ELEMENTO È PRESENTE IN UNA LISTA.
+ *  @brief Verifica se un elemento è presente in una lista.
  * 
  *  @param e Puntatore all'elemento da cercare nella lista.
  *  @param i Puntatore alla testa della lista in cui cercare l'elemento.
  *  
- *  @return TRUE SE L'ELEMENTO È PRESENTE NELLA LISTA, FALSE ALTRIMENTI.
+ *  @return True se l'elemento è presente nella lista, false altrimenti.
  */
 
 bool MainIsMember(const ElemType *e, Item* i);
 
 /**
- *  @brief CALCOLA LA LUNGHEZZA DI UNA LISTA.
+ *  @brief Calcola la lunghezza di una lista.
  * 
  *  @param i Puntatore alla testa della lista di cui calcolare la lunghezza.
  *  
- *  @return IL NUMERO DI ELEMENTI NELLA LISTA.
+ *  @return Il numero di elementi nella lista.
  */
 
 int GetLength(const Item* l);
 
 /**
- *  @brief SCRIVE SU UN FILE LA RAPPRESENTAZIONE DELLA LISTA CON INDIRIZZI E VALORI.
+ *  @brief Scrive su un file la rappresentazione della lista con indirizzi e valori.
  * 
  *  @param i Puntatore alla testa della lista da stampare.
  *  @param f Puntatore al file su cui scrivere gli indirizzi e i valori. 
@@ -107,7 +106,7 @@ int GetLength(const Item* l);
 void WriteListWithAddresses(const Item *i, FILE *f);
 
 /**
- *  @brief STAMPA A VIDEO LA RAPPRESENTAZIONE DELLA LISTA CON INDIRIZZI E VALORI.
+ *  @brief Stampa a video la rappresentazione della lista con indirizzi e valori.
  * 
  *  @param i Puntatore alla testa della lista da stampare.
  */
@@ -115,32 +114,32 @@ void WriteListWithAddresses(const Item *i, FILE *f);
 void ListWriteStdoutWithAddresses(const Item *i);
 
 /**
- *  @brief VERIFICA L'UGUAGLIANZA TRA DUE ELEMENTI.
+ *  @brief Verifica l'uguaglianza tra due elementi.
  * 
  *  @param e1 Puntatore al primo elemento da confrontare. 
  *  @param e2 Puntatore al secondo elemento da confrontare.  
  *  
- *  @return TRUE SE I DUE ELEMENTI SONO UGUALI, FALSE ALTRIMENTI
+ *  @return True se i due elementi sono uguali, false altrimenti.
  */
 
 bool MainAreEqual(const ElemType* e1, const ElemType* e2);
 
 /**
- *  @brief CREA UNA COPIA DI UN VETTORE DI LISTE.
+ *  @brief Crea una copia di un vettore di liste.
  * 
  *  @param ls Vettore di puntatori alle liste da copiare.
  *  @param n Lunghezza del vettore.
  *  
- *  @return IL NUMERO DI ELEMENTI NELLA LISTA.
+ *  @return Un puntatore alla testa del nuovo vettore di liste.
  */
 
 Item** MainCopyVectorOfLists(Item** ls, int n);
 
 /**
- *  @brief STRUTTURA CHE RAPPRESENTA UN VETTORE DI LISTE:
- *  -addresses: ARRAY DI PUNTATORI ALLE LISTE, RAPPRESENTANTI GLI INDIRIZZI DEGLI ELEMENTI.
- *  -values: ARRAY DI ELEMENTI, RAPPRESENTANTI I VALORI DEGLI ELEMENTI.
- *  -vecs_size: DIMENSIONE DEGLI ARRAY addresses E values.
+ *  @brief Struttura che rappresenta un vettore di liste:
+ *  -addresses: Array di puntatori alle liste, rappresentanti gli indirizzi degli elementi.
+ *  -values: Array di elementi, rappresentanti i valori degli elementi.
+ *  -vecs_size: Dimensione degli array addresses e values.
  */
 
 typedef struct {
@@ -150,7 +149,7 @@ typedef struct {
 } VectorList;
 
 /**
- *  @brief ELIMINA UN VectorList E NE DEALLOCA LA MEMORIA.
+ *  @brief Elimina un vettore di liste e ne dealloca la memoria.
  * 
  *  @param vl VectorList da eliminare e deallocare.
  */
@@ -158,29 +157,28 @@ typedef struct {
 void VectorListDelete(VectorList* vl);
 
 /**
- *  @brief CREA UN VectorList CONTENENTE GLI ELEMENTI DELLA LISTA PASSATA COME PARAMETRO.
+ *  @brief Crea un vettore di liste contenente gli elementi della lista passata come parametro.
  * 
  *  @param i Puntatore alla testa della lista da cui prendere i valori.
  * 
- *  @return UN NUOVO VectorList CONTENENTE INDIRIZZI E VALORI DEGLI ELEMENTI E LA LORO GRANDEZZA.
+ *  @return Un puntatore alla testa del vettore di liste contenente indirizzi e valori degli elementi e la loro grandezza.
  */
 
 VectorList* MainListGetItemAddresses(Item* i);
 
 /**
- *  @brief VERIFICA SE GLI INDIRIZZI DELLA LISTA SONO UGUALI A QUELLI CONTENUTI IN VectorList. 
+ *  @brief Verifica se gli indirizzi della lista sono uguali a quelli contenuti nel vettore di liste.
  * 
  *  @param vl Puntatore al VectorList contenente gli indirizzi da confrontare.
  *  @param list Puntatore alla testa della lista da confrontare.
  * 
- *  @return TRUE SE LA LISTA HA GLI STESSI INDIRIZZI DI QUELLI CONENUTI IN VectorList, 
- *  FALSE ALTRIMENTI.
+ *  @return True se la lista ha gli stessi indirizzi di quelli contenuti nel vettore di liste, false altrimenti.
  */
 
 bool MainListCompareWithAddressesVector(const VectorList* vl, const Item* list);
 
 /**
- *  @brief SCRIVE SU UN FILE UNA LISTA DI INDIRIZZI E VALORI CONENUTI IN VectorList. 
+ *  @brief Scrive su un file una lista di indirizzi e valori contenuti nel vettore di liste.
  * 
  *  @param vl Puntatore al VectorList contenente gli indirizzi e i valori da scrivere.
  *  @param f Puntatore al file su cui scrivere gli indirizzi e i valori.
