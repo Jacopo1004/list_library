@@ -45,17 +45,12 @@ FOREACH(cur_dir ${SUB_DIRS})
 							${cur_dir}/${cur_dir}.c
 							${cur_dir}/main_${cur_dir}.h
 							${cur_dir}/main_${cur_dir}.c
-						elemtype/elemtype.h
-						elemtype/elemtype.c
 				)
-			
-			else()
+			else ()
 				target_sources(${target_name_uppercase}
 					PRIVATE
 							${cur_dir}/${cur_dir}.h
 							${cur_dir}/${cur_dir}.c
-						elemtype/${dir_name}/elemtype.h
-						elemtype/${dir_name}/elemtype.c
 				)
 			endif()
 
