@@ -16,7 +16,7 @@ if(DEFINED CMAKE_BUILD_TYPE)
 endif()
 
 set(SUB_DIRS "list")
-# message(STATUS ${SUB_DIRS})
+#message(STATUS ${SUB_DIRS})
 
 FOREACH(cur_dir ${SUB_DIRS})
 	# message(STATUS "cur_dir: ${cur_dir}")
@@ -31,6 +31,7 @@ FOREACH(cur_dir ${SUB_DIRS})
 			# get_filename_component(dir_name "${cur_sub_dir}" NAME)
 			set(target_name "${cur_dir}_${dir_name}")
 			string(TOUPPER ${target_name} target_name_uppercase)
+			# message(STATUS "target_name: ${target_name_uppercase}")
 			
 			# file(GLOB sources ${cur_sub_dir}/*.c)
 			# file(GLOB headers ${cur_sub_dir}/*.h)
@@ -41,16 +42,20 @@ FOREACH(cur_dir ${SUB_DIRS})
 			if (${cur_dir} STREQUAL "list")
 				target_sources(${target_name_uppercase}
 					PRIVATE
-							${cur_dir}/${cur_dir}.h
-							${cur_dir}/${cur_dir}.c
-							${cur_dir}/main_${cur_dir}.h
-							${cur_dir}/main_${cur_dir}.c
+							list/list.h
+							list/list.c
+							list/main_list.h
+							list/main_list.c
+							elemtype/${dir_name}/elemtype.h
+							elemtype/${dir_name}/elemtype.c
 				)
 			else ()
 				target_sources(${target_name_uppercase}
 					PRIVATE
 							${cur_dir}/${cur_dir}.h
 							${cur_dir}/${cur_dir}.c
+							elemtype/${dir_name}/elemtype.h
+							elemtype/${dir_name}/elemtype.c
 				)
 			endif()
 

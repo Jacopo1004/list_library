@@ -1,14 +1,10 @@
 #ifndef MAIN_LIST_H
 #define MAIN_LIST_H 
 
-#include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
-#include <stdbool.h>
 #include <ctype.h>
 #include <string.h>
-#include <unistd.h>
-#include "elemtype.h"
 #include "list.h"
 
 /**
@@ -103,7 +99,7 @@ int GetLength(const Item* l);
  *  @param f Puntatore al file su cui scrivere gli indirizzi e i valori. 
  */
 
-void WriteListWithAddresses(const Item *i, FILE *f);
+void MainListWriteWithAddresses(const Item *i, FILE *f);
 
 /**
  *  @brief Stampa a video la rappresentazione della lista con indirizzi e valori.
@@ -111,7 +107,7 @@ void WriteListWithAddresses(const Item *i, FILE *f);
  *  @param i Puntatore alla testa della lista da stampare.
  */
 
-void ListWriteStdoutWithAddresses(const Item *i);
+void MainListWriteStdoutWithAddresses(const Item *i);
 
 /**
  *  @brief Verifica l'uguaglianza tra due elementi.
@@ -137,8 +133,8 @@ Item** MainCopyVectorOfLists(Item** ls, int n);
 
 /**
  *  @brief Struttura che rappresenta un vettore di liste:
- *  -addresses: Array di puntatori alle liste, rappresentanti gli indirizzi degli elementi.
- *  -values: Array di elementi, rappresentanti i valori degli elementi.
+ *  -addresses: Array di liste, che puntano al corrispettivo elemento dell'array values.
+ *  -values: Array di elementi, rappresentanti i valori.
  *  -vecs_size: Dimensione degli array addresses e values.
  */
 
@@ -149,7 +145,7 @@ typedef struct {
 } VectorList;
 
 /**
- *  @brief Elimina un vettore di liste e ne dealloca la memoria.
+ *  @brief Elimina un VectorList e ne dealloca la memoria.
  * 
  *  @param vl VectorList da eliminare e deallocare.
  */
@@ -157,31 +153,31 @@ typedef struct {
 void VectorListDelete(VectorList* vl);
 
 /**
- *  @brief Crea un vettore di liste contenente gli elementi della lista passata come parametro.
+ *  @brief Crea un VectorList contenente gli elementi della lista passata come parametro.
  * 
  *  @param i Puntatore alla testa della lista da cui prendere i valori.
  * 
- *  @return Un puntatore alla testa del vettore di liste contenente indirizzi e valori degli elementi e la loro grandezza.
+ *  @return Un puntatore alla testa del VectorList contenente indirizzi e valori degli elementi e la loro grandezza.
  */
 
 VectorList* MainListGetItemAddresses(Item* i);
 
 /**
- *  @brief Verifica se gli indirizzi della lista sono uguali a quelli contenuti nel vettore di liste.
+ *  @brief Verifica se gli indirizzi della lista sono uguali a quelli contenuti nel VectorList.
  * 
  *  @param vl Puntatore al VectorList contenente gli indirizzi da confrontare.
  *  @param list Puntatore alla testa della lista da confrontare.
  * 
- *  @return True se la lista ha gli stessi indirizzi di quelli contenuti nel vettore di liste, false altrimenti.
+ *  @return True se la lista ha gli stessi indirizzi di quelli contenuti nel VectorList, false altrimenti.
  */
 
 bool MainListCompareWithAddressesVector(const VectorList* vl, const Item* list);
 
 /**
- *  @brief Scrive su un file una lista di indirizzi e valori contenuti nel vettore di liste.
+ *  @brief Scrive su un file indirizzi e valori contenuti nel VectorList.
  * 
- *  @param vl Puntatore al VectorList contenente gli indirizzi e i valori da scrivere.
- *  @param f Puntatore al file su cui scrivere gli indirizzi e i valori.
+ *  @param vl Puntatore al VectorList contenente indirizzi e valori da scrivere.
+ *  @param f Puntatore al file su cui scrivere indirizzi e valori.
  */
 
 void MainListWriteListByAddressesWithAddresses(const VectorList* vl, FILE* f);

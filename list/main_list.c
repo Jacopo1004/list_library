@@ -4,8 +4,7 @@ int mymax(int a, int b) { if (a > b)  return a; else return b; }
 
 int mymin(int a, int b) { if (a < b) return a; else return b; }
 
-bool IsOrdered(Item* i)
-{
+bool IsOrdered(Item* i) {
     if (ListIsEmpty(i)) {
         return true;
     }
@@ -19,8 +18,7 @@ bool IsOrdered(Item* i)
     return true;
 }
 
-bool MainConfrontaListe(Item* i1, Item* i2)
-{
+bool MainConfrontaListe(Item* i1, Item* i2) {
     for (; !ListIsEmpty(i1) && !ListIsEmpty(i2); i1 = ListGetTail(i1), i2 = ListGetTail(i2)) {
         if (ElemCompare(&i1->value, &i2->value) != 0) {
             return false;
@@ -32,22 +30,7 @@ bool MainConfrontaListe(Item* i1, Item* i2)
     return false;
 }
 
-/*
-bool MainConfrontaListe(Item* l1, Item* l2) {
-    for (; !ListIsEmpty(l1) && !ListIsEmpty(l2); l1 = ListGetTail(l1), l2 = ListGetTail(l2)) {
-        if (!MainAreEqual(&l1->value, &l2->value)) {
-            return false;
-        }
-    }
-    if (ListIsEmpty(l1) && ListIsEmpty(l2)) {
-        return true;
-    }
-    return false;
-}
-*/
-
-Item* MainCopyList(const Item* l)
-{
+Item* MainCopyList(const Item* l) {
     Item* n = ListCreateEmpty();
 
     while (!ListIsEmpty(l)) {
@@ -58,8 +41,7 @@ Item* MainCopyList(const Item* l)
     return n;
 }
 
-Item* MainCreateListFromVector(const int *v, size_t v_size)
-{
+Item* MainCreateListFromVector(const int *v, size_t v_size) {
     Item *list = ListCreateEmpty();
     for (size_t i = 0; i < v_size; ++i) {
         list = ListInsertBack(list, &v[i]);
@@ -67,8 +49,7 @@ Item* MainCreateListFromVector(const int *v, size_t v_size)
     return list;
 }
 
-bool MainIsMember(const ElemType *e, Item* i)
-{
+bool MainIsMember(const ElemType *e, Item* i) {
     while (!ListIsEmpty(i)) {
         if (ElemCompare(e, ListGetHeadValue(i)) == 0) {
             return true;
@@ -79,8 +60,7 @@ bool MainIsMember(const ElemType *e, Item* i)
     return false;
 }
 
-int GetLength(const Item* l) 
-{
+int GetLength(const Item* l) {
     int length = 0;
     while (!ListIsEmpty(l)) {
         length++;
@@ -89,24 +69,10 @@ int GetLength(const Item* l)
     return length;
 }
 
-void WriteListWithAddresses(const Item *i, FILE *f)
-{
-    fprintf(f, "[");
-    while (!ListIsEmpty(i)) {
-        fprintf(f, "(%p) %i", (void*)i, i->value);
-        i = ListGetTail(i);
-        if (!ListIsEmpty(i)) {
-            fprintf(f, ", ");
-        }
-    }
-    fprintf(f, "]\n");
-}
-
-/*
 void MainListWriteWithAddresses(const Item* i, FILE* f) {
     fprintf(f, "[");
     while (!ListIsEmpty(i)) {
-        fprintf(f, "(0x%p) ", (void*)i);
+        fprintf(f, "(%p) ", (void*)i);
         ElemWrite(&i->value, f);
         i = ListGetTail(i);
         if (!ListIsEmpty(i)) {
@@ -115,29 +81,19 @@ void MainListWriteWithAddresses(const Item* i, FILE* f) {
     }
     fprintf(f, "]\n");
 }
-*/
 
-void ListWriteStdoutWithAddresses(const Item *i)
-{
-    WriteListWithAddresses(i, stdout);
-}
-
-/*
-void MainListWriteStdoutWithAddresses(const Item* i) {
+void MainListWriteStdoutWithAddresses(const Item *i) {
     MainListWriteWithAddresses(i, stdout);
 }
-*/
 
-bool MainAreEqual(const ElemType* e1, const ElemType* e2) 
-{
+bool MainAreEqual(const ElemType* e1, const ElemType* e2) {
     if (*e1 == *e2) {
         return true;
     }
     return false;
 }
 
-Item** MainCopyVectorOfLists(Item** ls, int n) 
-{
+Item** MainCopyVectorOfLists(Item** ls, int n) {
     Item** new_ls = malloc(sizeof(Item*) * n);
     for (int i = 0; i < n; ++i) {
         new_ls[i] = MainCopyList(ls[i]);
@@ -145,8 +101,7 @@ Item** MainCopyVectorOfLists(Item** ls, int n)
     return new_ls;
 }
 
-void VectorListDelete(VectorList* vl) 
-{
+void VectorListDelete(VectorList* vl) {
     for (size_t i = 0; i < vl->vecs_size; ++i) {
         ElemDelete(&vl->values[i]);
     }
@@ -155,8 +110,7 @@ void VectorListDelete(VectorList* vl)
     free(vl);
 }
 
-VectorList* MainListGetItemAddresses(Item* i) 
-{
+VectorList* MainListGetItemAddresses(Item* i) {
     VectorList* vl = malloc(sizeof(VectorList));
     vl->addresses = NULL;
     vl->values = NULL;
@@ -171,8 +125,7 @@ VectorList* MainListGetItemAddresses(Item* i)
     return vl;
 }
 
-bool MainListCompareWithAddressesVector(const VectorList* vl, const Item* list) 
-{
+bool MainListCompareWithAddressesVector(const VectorList* vl, const Item* list) {
     // N.B. Se hanno lo stesso indirizzo hanno anche gli stessi valori!
     size_t list_len = 0;
     for (size_t i = 0; i < vl->vecs_size && !ListIsEmpty(list); ++i) {
@@ -189,11 +142,10 @@ bool MainListCompareWithAddressesVector(const VectorList* vl, const Item* list)
     return true;
 }
 
-void MainListWriteListByAddressesWithAddresses(const VectorList* vl, FILE* f) 
-{
+void MainListWriteListByAddressesWithAddresses(const VectorList* vl, FILE* f) {
     fprintf(f, "[");
     for (size_t i = 0; i < vl->vecs_size; ++i) {
-        fprintf(f, "(0x%p) ", (void*)vl->addresses[i]);
+        fprintf(f, "(%p) ", (void*)vl->addresses[i]);
         ElemWrite(&vl->values[i], f);
         if (i != vl->vecs_size - 1) {
             fprintf(f, ", ");

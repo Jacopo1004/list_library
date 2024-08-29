@@ -1,8 +1,10 @@
 set(examples_sources
-    insert_ord.c
-    iterate.c
+    	insert_ord.c
+    	iterate.c
 	additional_op.c
 	load.c
 	copy.c
+	test_main_list.c
+	test_main_list_advanced.c
 )
 include(../../../CMakeLists.examples.inc.txt)
