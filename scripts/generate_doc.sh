@@ -27,7 +27,6 @@ for i in $doxyfiles; do
 	type_name=$(basename $i)
 	echo "cp elemtype/$type_name/*.* $i"
 	cp elemtype/$type_name/*.* $i
- 	echo "ok"
 
 	# Redirect both stderr and stdout to the log file and the console.
 	cd $i/doxygen
@@ -39,9 +38,7 @@ for i in $doxyfiles; do
 	##### Copy generated doc from master folder to gh-pages one.               #####
 	dir=gh-pages/$i/html
 	if [ -d "$dir" ]; then rm -Rf $dir; fi
- 	echo "mkdir -p $dir"
 	mkdir -p $dir
- 	echo "mv $i/doxygen/html gh-pages/$i"
 	mv $i/doxygen/html gh-pages/$i
 
 	################################################################################
