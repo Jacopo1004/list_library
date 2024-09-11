@@ -27,6 +27,7 @@ for i in $doxyfiles; do
 	type_name=$(basename $i)
 	echo "cp elemtype/$type_name/*.* $i"
 	cp elemtype/$type_name/*.* $i
+ 	echo "ok"
 
 	# Redirect both stderr and stdout to the log file and the console.
 	cd $i/doxygen
