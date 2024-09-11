@@ -7,6 +7,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v3
+      with:
+        fetch-depth: 0
+
+    - name: List files in root and scripts directory
+      run: |
+        ls -l
+        ls -l scripts/
     
     # Install dependencies
     - name: Dependencies
@@ -18,8 +25,8 @@ jobs:
     # Build the HTML documentation
     - name: Doxygen
       run: |
-        chmod +x list_library/scripts/generate_doc.sh
-        list_library/scripts/generate_doc.sh
+        chmod +x $list_library/scripts/generate_doc.sh
+        $list_library/scripts/generate_doc.sh
     
     # Deploy the HTML documentation to GitHub Pages
     - name: GH Pages Deployment
