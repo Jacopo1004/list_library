@@ -11,10 +11,11 @@ documentazione delle funzioni a esso associate.
 
 /** @brief Definizione di `struct ElemType`. */
 typedef struct {
-    int x;
-    int y;
+    int x;  /**< Coordinata X del punto */
+    int y;  /**< Coordinata Y del punto */
 } Point2D;
 
+/** @brief Definizione di un nome alternativo per `struct ElemType`. */
 typedef Point2D ElemType;
 
 /** @brief La funzione `ElemCopy()` crea e ritorna una copia dell'elemento dato.
