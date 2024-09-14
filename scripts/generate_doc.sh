@@ -36,10 +36,10 @@ for i in $doxyfiles; do
 
 	################################################################################
 	##### Copy generated doc from master folder to gh-pages one.               #####
-	dir=gh-pages/docs/$i/html
+	dir=gh-pages/$i/html
 	if [ -d "$dir" ]; then rm -Rf $dir; fi
 	mkdir -p $dir
-	mv $i/doxygen/html gh-pages/docs/$i
+	mv $i/doxygen/html gh-pages/$i
 
 	################################################################################
 	##### Creation of the zip file for the download.                           #####
@@ -51,7 +51,7 @@ for i in $doxyfiles; do
 	echo ${zip_name}
 	zip ${zip_name} -r ${headers} ${sources}
 
-	file=../../gh-pages/docs/$i/${zip_name}
+	file=../../gh-pages/$i/${zip_name}
 	if [ -f "$file" ]; then rm $file; fi
 	mv ${zip_name} ${file}
 	cd $cwd
@@ -77,10 +77,10 @@ for i in $doxyfiles; do
 
 	################################################################################
 	##### Copy generated doc from master folder to gh-pages one.               #####
-	dir=gh-pages/docs/$i/html
+	dir=gh-pages/$i/html
 	if [ -d "$dir" ]; then rm -Rf $dir; fi
 	mkdir -p $dir
-	mv $i/doxygen/html gh-pages/docs/$i
+	mv $i/doxygen/html gh-pages/$i
 
 	################################################################################
 	##### Creation of the zip file for the download.                           #####
@@ -92,7 +92,7 @@ for i in $doxyfiles; do
 	echo ${zip_name}
 	zip ${zip_name} -r ${headers} ${sources}
 
-	file=../gh-pages/docs/$i/${zip_name}
+	file=../gh-pages/$i/${zip_name}
 	if [ -f "$file" ]; then rm $file; fi
 	mv ${zip_name} ${file}
 	cd $cwd
@@ -118,10 +118,10 @@ for i in $doxyfiles; do
 
 	################################################################################
 	##### Copy generated doc from master folder to gh-pages one.               #####
-	dir=gh-pages/docs/elemtype/$i/html
+	dir=gh-pages/elemtype/$i/html
 	if [ -d "$dir" ]; then rm -Rf $dir; fi
 	mkdir -p $dir
-	mv elemtype/$i/doxygen/html gh-pages/docs/elemtype/$i
+	mv elemtype/$i/doxygen/html gh-pages/elemtype/$i
 
 	################################################################################
 	##### Creation of the zip file for the download.                           #####
@@ -133,7 +133,7 @@ for i in $doxyfiles; do
 	echo ${zip_name}
 	zip ${zip_name} -r ${headers} ${sources}
 
-	file=../../gh-pages/docs/elemtype/$i/${zip_name}
+	file=../../gh-pages/elemtype/$i/${zip_name}
 	if [ -f "$file" ]; then rm $file; fi
 	mv ${zip_name} ${file}
 	cd $cwd
