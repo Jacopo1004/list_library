@@ -11,9 +11,9 @@ documentazione delle funzioni a esso associate.
 
 /** @brief Definizione di `struct ElemType`. */
 typedef struct {
-    int x;
-    int y;
-} Point2D;
+    int x;  /**< Coordinata X del punto */
+    int y;  /**< Coordinata Y del punto */
+} Point2D;  
 
 typedef Point2D ElemType;
 

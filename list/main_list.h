@@ -139,9 +139,9 @@ Item** MainCopyVectorOfLists(Item** ls, int n);
  */
 
 typedef struct {
-    Item** addresses;
-    ElemType* values;
-    size_t vecs_size;
+    Item** addresses;   /**< Array di liste, che puntano al corrispettivo elemento dell'array values. */
+    ElemType* values;   /**< Array di elementi, rappresentanti i valori. */
+    size_t vecs_size;   /**< Dimensione degli array addresses e values. */
 } VectorList;
 
 /**
