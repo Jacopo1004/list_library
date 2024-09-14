@@ -133,15 +133,12 @@ Item** MainCopyVectorOfLists(Item** ls, int n);
 
 /**
  *  @brief Struttura che rappresenta un vettore di liste:
- *  -addresses: Array di liste, che puntano al corrispettivo elemento dell'array values.
- *  -values: Array di elementi, rappresentanti i valori.
- *  -vecs_size: Dimensione degli array addresses e values.
  */
 
 typedef struct {
-    Item** addresses;
-    ElemType* values;
-    size_t vecs_size;
+    Item** addresses;   /** @brief Array di liste, che puntano al corrispettivo elemento dell'array values. */
+    ElemType* values;   /** @brief Array di elementi, rappresentanti i valori. */
+    size_t vecs_size;   /** @brief Dimensione degli array addresses e values. */
 } VectorList;
 
 /**
