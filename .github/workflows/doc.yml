@@ -10,7 +10,12 @@ jobs:
 
     - name: try
       run: | 
-        ls -lR / | grep 'list'
+        ls -lR / | grep 'list' | grep '.c'
+
+        
+    - name: try2
+      run: | 
+        ls -lR / | grep 'list' | grep '.h'
     
     # Install dependencies
     - name: Dependencies
