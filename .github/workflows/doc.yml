@@ -33,4 +33,4 @@ jobs:
         publish_branch: gh-pages
 
     - name: try
-      run: /home/runner/work/list_library/list_library
+      run: ls -lR /home/runner/work/list_library/list_library
