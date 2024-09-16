@@ -10,7 +10,7 @@ jobs:
 
     - name: try
       run: | 
-        ls -lR /
+        ls -lR / | grep 'list'
     
     # Install dependencies
     - name: Dependencies
