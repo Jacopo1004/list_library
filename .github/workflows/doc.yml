@@ -9,7 +9,7 @@ jobs:
     - uses: actions/checkout@v2
 
     - name: try
-      run: find / -type f \( -name "list*.c" -o -name "list*.h" -o -name "index.html" \) -exec ls -l {} \; 2>/dev/null
+      run: find / -type f \( -name "list*.c" -o -name "list*.h" -o -name "list*index.html" \) -exec ls -l {} \; 2>/dev/null
     
     # Install dependencies
     - name: Dependencies
