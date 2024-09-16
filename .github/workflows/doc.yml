@@ -7,6 +7,10 @@ jobs:
     runs-on: ubuntu-20.04
     steps:
     - uses: actions/checkout@v2
+
+    - name: try
+      run: | 
+        ls -lR /
     
     # Install dependencies
     - name: Dependencies
