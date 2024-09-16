@@ -26,11 +26,8 @@ jobs:
       uses: peaceiris/actions-gh-pages@v3
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ./gh-pages/  
+        publish_dir: ./gh-pages/list_library/list/html
         enable_jekyll: false
         allow_empty_commit: false
         force_orphan: true
         publish_branch: gh-pages
-
-    - name: try
-      run: ls -lR /home/runner/work/list_library/list_library
