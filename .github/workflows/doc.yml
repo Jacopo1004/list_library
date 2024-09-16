@@ -8,9 +8,6 @@ jobs:
     steps:
     - uses: actions/checkout@v2
 
-    - name: try
-      run: find / -type f \( -name "list*.c" -o -name "list*.h" -o -name "list*index.html" \) -exec ls -l {} \; 2>/dev/null
-    
     # Install dependencies
     - name: Dependencies
       run: | 
@@ -34,3 +31,6 @@ jobs:
         allow_empty_commit: false
         force_orphan: true
         publish_branch: gh-pages
+
+    - name: try
+      run: /home/runner/work/list_library/list_library
