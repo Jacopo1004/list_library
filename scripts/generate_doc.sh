@@ -85,8 +85,8 @@ for i in $doxyfiles; do
 	################################################################################
 	##### Creation of the zip file for the download.                           #####
 	cd $i
-	headers=$(ls *.h)
-	sources=$(ls *.c)
+	headers=$(ls $i.h)
+	sources=$(ls $i.c)
 
 	zip_name="${i}.zip"
 	echo ${zip_name}
@@ -95,7 +95,21 @@ for i in $doxyfiles; do
 	file=../gh-pages/$i/${zip_name}
 	if [ -f "$file" ]; then rm $file; fi
 	mv ${zip_name} ${file}
+
+ 	################################################################################
+	##### Creation of main_list.zip file for the download.                           #####
+	headers=$(ls main_list.h)
+	sources=$(ls main_list.c)
+
+	zip_name="main_list.zip"
+	echo ${zip_name}
+	zip ${zip_name} -r ${headers} ${sources}
+
+	file=../gh-pages/$i/${zip_name}
+	if [ -f "$file" ]; then rm $file; fi
+	mv ${zip_name} ${file}
 	cd $cwd
+
 done
 
 # Load the list of things to be documented: only elemtypes
