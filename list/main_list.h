@@ -1,3 +1,7 @@
+/** @file main_list.h
+Questo file contiene funzioni avanzate del tipo `Item` e introduce una nuova struttura dati 'VectorList'.
+*/
+
 #ifndef MAIN_LIST_H
 #define MAIN_LIST_H 
 
