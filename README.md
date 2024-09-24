@@ -42,4 +42,4 @@ La struttura del progetto è la seguente:
 | `elemtype_int-vector` | <a href="https://jacopo1004.github.io/list_library/elemtype/int_vector/html/elemtype_8h.html">elemtype_int_vector.html</a> | <a href="https://jacopo1004.github.io/list_library/elemtype/int_vector/elemtype_int_vector.zip">elemtype_int_vector.zip</a> |
 | `elemtype_point2D` | <a href="https://jacopo1004.github.io/list_library/elemtype/point2d/html/elemtype_8h.html">elemtype_point2d.html</a> | <a href="https://jacopo1004.github.io/list_library/elemtype/point2d/elemtype_point2d.zip">elemtype_point2d.zip</a> |
 | `list` | <a href="https://jacopo1004.github.io/list_library/list/html/list_8h.html">list.html</a> | <a href="https://jacopo1004.github.io/list_library/list/list.zip">list.zip</a> |
-| `main_list` | <a href="https://jacopo1004.github.io/list_library/list/html/main__list_8h.html">main_list.html</a> | <a href="https://jacopo1004.github.io/list_library/list/main_list.zip">list.zip</a> |
+| `main_list` | <a href="https://jacopo1004.github.io/list_library/list/html/main__list_8h.html">main_list.html</a> | <a href="https://jacopo1004.github.io/list_library/list/main_list.zip">main_list.zip</a> |
