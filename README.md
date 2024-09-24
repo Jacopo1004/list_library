@@ -11,10 +11,10 @@ La struttura del progetto è la seguente:
 ```
 .
 ├── elemtype
-|   ├── int
+|   ├── char
 |   |   ├── elemtype.h
 |   |   ├── elemtype.c
-|   ├── char
+|   ├── int
 |   |   ├── elemtype.h
 |   |   ├── elemtype.c
 |   ├── int_vector
@@ -33,7 +33,6 @@ La struttura del progetto è la seguente:
 |   ├── main_list.h
 |   ├── main_list.c 
 ```
-
 
 | Tipo di Dato | Documentazione | Sorgente           |       
 |:------------:|:--------------:|:------------------:|
