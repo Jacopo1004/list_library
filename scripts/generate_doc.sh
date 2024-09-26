@@ -164,10 +164,10 @@ list_index_file="gh-pages/list/html/list_8h.html"
 # Link al file zip da aggiungere per la libreria list
 list_download_link="<p><a href=\"https://jacopo1004.github.io/list_library/list/list.zip\">Scarica il file zip della libreria list</a></p>"
 
-# Verifica se il file esiste e aggiungi il link subito dopo il logo (o prima della barra)
+# Verifica se il file esiste e aggiungi il link subito dopo il logo
 if [ -f "$list_index_file" ]; then
-    # Usa sed per cercare un punto preciso per inserire il link
-    sed -i "/<div class=\"contents\">/a $list_download_link" "$list_index_file"
+    # Usa sed per cercare il logo e inserire il link subito dopo
+    sed -i "/<h1>/a $list_download_link" "$list_index_file"
     echo "Link per la libreria list aggiunto con successo a $list_index_file"
 else
     echo "Il file $list_index_file non esiste!"
@@ -182,10 +182,10 @@ main_list_index_file="gh-pages/list/html/main__list_8h.html"
 # Link al file zip da aggiungere per la libreria main_list
 main_list_download_link="<p><a href=\"https://jacopo1004.github.io/list_library/list/main_list.zip\">Scarica il file zip della libreria main_list</a></p>"
 
-# Verifica se il file esiste e aggiungi il link subito dopo il logo (o prima della barra)
+# Verifica se il file esiste e aggiungi il link subito dopo il logo
 if [ -f "$main_list_index_file" ]; then
-    # Usa sed per cercare un punto preciso per inserire il link
-    sed -i "/<div class=\"contents\">/a $main_list_download_link" "$main_list_index_file"
+    # Usa sed per cercare il logo e inserire il link subito dopo
+    sed -i "/<h1>/a $main_list_download_link" "$main_list_index_file"
     echo "Link per la libreria main_list aggiunto con successo a $main_list_index_file"
 else
     echo "Il file $main_list_index_file non esiste!"
