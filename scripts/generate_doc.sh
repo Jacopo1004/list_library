@@ -167,7 +167,7 @@ download_link="<p><a href=\"https://jacopo1004.github.io/list_library/list/main_
 # Verifica se il file esiste e aggiungi il link subito dopo il primo tag <body>
 if [ -f "$index_file" ]; then
     # Usa sed per inserire il link direttamente dopo il primo tag <body>
-    sed -i '0,/<body>/s//&'"$download_link"'/g' "$index_file"
+    sed -i '0,|<body>|s|&|'"$download_link"'|g' "$index_file"
     echo "Link aggiunto con successo a $index_file"
 else
     echo "Il file $index_file non esiste!"
