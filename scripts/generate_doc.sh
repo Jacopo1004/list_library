@@ -159,7 +159,7 @@ echo $(ls -l gh-pages)
 echo "Modifica del file HTML della documentazione di main_list per inserire il link al file zip..."
 
 # File HTML generato da Doxygen per la documentazione di main_list
-index_file="gh-pages/list/html/search/index.html"
+index_file="gh-pages/list/html/index.html"
 
 # Link al file zip da aggiungere
 download_link="<p><a href=\"https://jacopo1004.github.io/list_library/list/main_list.zip\">Scarica il file zip della libreria main_list</a></p>"
