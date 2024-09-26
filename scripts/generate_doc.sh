@@ -155,37 +155,37 @@ done
 
 echo $(ls -l gh-pages)
 
-# Modifica del file HTML principale della documentazione di list per inserire il link al file zip sotto il logo
-echo "Modifica del file HTML principale della documentazione di list per inserire il link al file zip sotto il logo..."
+# Modifica del file HTML della documentazione di list per inserire il link al file zip
+echo "Modifica del file HTML della documentazione di list per inserire il link al file zip..."
 
 # File HTML generato da Doxygen per la documentazione di list
 index_file="gh-pages/list/html/list_8h.html"
 
 # Link al file zip da aggiungere
-download_link="<p><a href=\"https://jacopo1004.github.io/list_library/list/list.zip\" download>Scarica il file zip della libreria list</a>"
+download_link="<p><a href=\"https://jacopo1004.github.io/list_library/list/list.zip\">Scarica il file zip della libreria list</a></p>"
 
-# Verifica se il file esiste e aggiungi il link subito dopo il logo
+# Verifica se il file esiste e aggiungi il link subito dopo il <td id="projectlogo">
 if [ -f "$index_file" ]; then
-    # Usa sed per inserire il link subito dopo il tag <div id=\"projectlogo\">
-    sed -i "/<div id=\"projectlogo\">/a $download_link" "$index_file"
+    # Usa sed per inserire il link subito dopo il tag <td id="projectlogo">
+    sed -i '/<td id="projectlogo">/a \ \n'"$download_link" "$index_file"
     echo "Link aggiunto con successo a $index_file"
 else
     echo "Il file $index_file non esiste!"
 fi
 
-# Modifica del file HTML principale della documentazione di main_list per inserire il link al file zip sotto il logo
-echo "Modifica del file HTML principale della documentazione di main_list per inserire il link al file zip sotto il logo..."
+# Modifica del file HTML della documentazione di main_list per inserire il link al file zip
+echo "Modifica del file HTML della documentazione di main_list per inserire il link al file zip..."
 
 # File HTML generato da Doxygen per la documentazione di main_list
 index_file="gh-pages/list/html/main__list_8h.html"
 
 # Link al file zip da aggiungere
-download_link="<p><a href=\"https://jacopo1004.github.io/list_library/main_list/main_list.zip\" download>Scarica il file zip della libreria main_list</a>"
+download_link="<p><a href=\"https://jacopo1004.github.io/list_library/main_list/main_list.zip\">Scarica il file zip della libreria main_list</a></p>"
 
-# Verifica se il file esiste e aggiungi il link subito dopo il logo
+# Verifica se il file esiste e aggiungi il link subito dopo il <td id="projectlogo">
 if [ -f "$index_file" ]; then
-    # Usa sed per inserire il link subito dopo il tag <div id=\"projectlogo\">
-    sed -i "/<div id=\"projectlogo\">/a $download_link" "$index_file"
+    # Usa sed per inserire il link subito dopo il tag <td id="projectlogo">
+    sed -i '/<td id="projectlogo">/a \ \n'"$download_link" "$index_file"
     echo "Link aggiunto con successo a $index_file"
 else
     echo "Il file $index_file non esiste!"
