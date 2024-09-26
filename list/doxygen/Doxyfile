@@ -1024,7 +1024,11 @@ FILTER_SOURCE_PATTERNS =
 # (index.html). This can be useful if you have a project on for instance GitHub
 # and want to reuse the introduction page also for the doxygen output.
 
-USE_MDFILE_AS_MAINPAGE =
+USE_MDFILE_AS_MAINPAGE = \
+\mainpage Documentazione della libreria main_list \
+\nBenvenuto nella documentazione della libreria main_list. \
+\n\
+\n**[Scarica il file zip della libreria main_list](https://jacopo1004.github.io/list_library/list/main_list.zip)**
 
 #---------------------------------------------------------------------------
 # Configuration options related to source browsing
