@@ -155,7 +155,7 @@ done
 
 echo $(ls -l gh-pages)
 
-# Inserisci il link per scaricare lo zip nella homepage della documentazione di main_list
+# Modifica del file HTML della documentazione di main_list per inserire il link al file zip
 echo "Modifica del file HTML della documentazione di main_list per inserire il link al file zip..."
 
 # File HTML generato da Doxygen per la documentazione di main_list
@@ -166,8 +166,8 @@ download_link="<p><a href=\"https://jacopo1004.github.io/list_library/list/main_
 
 # Verifica se il file esiste e aggiungi il link subito dopo il primo tag <body>
 if [ -f "$index_file" ]; then
-    # Inserisce il link subito dopo il primo tag <body>
-    sed -i '/<body>/a '"$download_link"'' "$index_file"
+    # Usa sed per inserire il link direttamente dopo il primo tag <body>
+    sed -i '0,/<body>/s//&'"$download_link"'/g' "$index_file"
     echo "Link aggiunto con successo a $index_file"
 else
     echo "Il file $index_file non esiste!"
