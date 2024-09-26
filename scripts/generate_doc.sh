@@ -164,10 +164,10 @@ index_file="gh-pages/list/html/main__list_8h.html"
 # Link al file zip da aggiungere
 download_link="<p><a href=\"https://jacopo1004.github.io/list_library/list/main_list.zip\">Scarica il file zip della libreria main_list</a></p>"
 
-# Verifica se il file esiste e aggiungi il link subito prima della chiusura del tag </div><!-- contents -->
+# Verifica se il file esiste e aggiungi il link subito dopo il primo tag <body>
 if [ -f "$index_file" ]; then
-    # Usa sed per inserire il link subito prima della chiusura del div con la classe "contents"
-    sed -i "s|</div><!-- contents -->|$download_link\n&|" "$index_file"
+    # Usa sed per inserire il link subito dopo il primo tag <body>
+    sed -i "s|<body>|<body>\n$download_link\n|" "$index_file"
     echo "Link aggiunto con successo a $index_file"
 else
     echo "Il file $index_file non esiste!"
