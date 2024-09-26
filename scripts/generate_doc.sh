@@ -162,7 +162,7 @@ echo "Modifica del file HTML principale della documentazione di list per inserir
 index_file="gh-pages/list/html/list_8h.html"
 
 # Link al file zip da aggiungere
-download_link="<br><a href=\"https://jacopo1004.github.io/list_library/list/list.zip\" download>Scarica il file zip della libreria list</a>"
+download_link="<p><a href=\"https://jacopo1004.github.io/list_library/list/list.zip\" download>Scarica il file zip della libreria list</a>"
 
 # Verifica se il file esiste e aggiungi il link subito dopo il logo
 if [ -f "$index_file" ]; then
@@ -180,7 +180,7 @@ echo "Modifica del file HTML principale della documentazione di main_list per in
 index_file="gh-pages/list/html/main__list_8h.html"
 
 # Link al file zip da aggiungere
-download_link="<br><a href=\"https://jacopo1004.github.io/list_library/main_list/main_list.zip\" download>Scarica il file zip della libreria main_list</a>"
+download_link="<p><a href=\"https://jacopo1004.github.io/list_library/main_list/main_list.zip\" download>Scarica il file zip della libreria main_list</a>"
 
 # Verifica se il file esiste e aggiungi il link subito dopo il logo
 if [ -f "$index_file" ]; then
