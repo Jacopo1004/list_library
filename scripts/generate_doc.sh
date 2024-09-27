@@ -167,7 +167,7 @@ download_link="<p><a href=\"https://jacopo1004.github.io/list_library/list/list.
 # Verifica se il file esiste e aggiungi il link subito dopo il <td id="projectlogo">
 if [ -f "$index_file" ]; then
     # Usa sed per inserire il link subito dopo il tag <td id="projectlogo">
-    sed -i '/<td id="projectlogo">/a \ \n'"$download_link" "$index_file"
+    sed -i '/<\/td>/a \ \n'"$download_link" "$index_file"
     echo "Link aggiunto con successo a $index_file"
 else
     echo "Il file $index_file non esiste!"
@@ -185,7 +185,7 @@ download_link="<p><a href=\"https://jacopo1004.github.io/list_library/main_list/
 # Verifica se il file esiste e aggiungi il link subito dopo il <td id="projectlogo">
 if [ -f "$index_file" ]; then
     # Usa sed per inserire il link subito dopo il tag <td id="projectlogo">
-    sed -i '/<td id="projectlogo">/a \ \n'"$download_link" "$index_file"
+    sed -i '/<\/td>/a \ \n'"$download_link" "$index_file"
     echo "Link aggiunto con successo a $index_file"
 else
     echo "Il file $index_file non esiste!"
